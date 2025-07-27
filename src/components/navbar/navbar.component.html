@@ -1,0 +1,53 @@
+
+  <!-- Centered rounded navbar -->
+  <nav class="navbar bg-white rounded-xl shadow px-4 max-w-6xl mx-auto sticky top-1 z-50 border border-[#d1d1d1]">
+    
+    <!-- Navbar Start (Hamburger + Logo) -->
+    <div class="navbar-start flex items-center gap-1">
+      <!-- Hamburger Icon - Mobile -->
+      <button title="btn" class="btn btn-ghost lg:hidden" (click)="sidebarOpen = true">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <!-- Logo -->
+      <div class="text-xl font-bold flex items-center gap-1"><img alt="" src="/assets/pieChart.svg" class="w-5 h-5"/>Alytics</div>
+    </div>
+
+    <!-- Navbar Center (Desktop links only) -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 font-medium">
+        <li><a routerLink="/home" routerLinkActive="link-active">Home</a></li>
+        <li><a>Features</a></li>
+        <li><a>Pricing</a></li>
+        <li><a>Testimonial</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Navbar End -->
+    <div class="navbar-end">
+      <button class="btn btn-primary btn-sm rounded-md">Get Started</button>
+    </div>
+  </nav>
+
+
+<!-- Sidebar for Mobile -->
+<aside
+  class="fixed top-0 left-0 h-full w-64 bg-base-100 shadow-lg z-50 transform transition-transform duration-300 lg:hidden"
+  [ngClass]="{ '-translate-x-full': !sidebarOpen, 'translate-x-0': sidebarOpen }"
+>
+  <div class="p-4 border-b flex items-center justify-between">
+    <h2 class="font-bold text-lg">Menu</h2>
+    <button class="btn btn-sm btn-ghost" (click)="sidebarOpen = false">✕</button>
+  </div>
+  <ul class="menu p-4">
+    <li><a routerLink="/home" routerLinkActive="link-active" (click)="sidebarOpen = false">Home</a></li>
+    <li><a (click)="sidebarOpen = false">Features</a></li>
+    <li><a (click)="sidebarOpen = false">Pricing</a></li>
+    <li><a (click)="sidebarOpen = false">Testimonial</a></li>
+    <li><a (click)="sidebarOpen = false">Contact</a></li>
+  </ul>
+</aside>

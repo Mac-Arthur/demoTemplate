@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* #1571fc- blue */
+/* #0c9ddf-light blue */
+
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all, light --default;
+}
+
+body {
+  /* background: url("/assets/background.png") repeat; */
+  background-color: #f8f8f8;
+  font-family: "Rubik", sans-serif;
+}
+
+.btn-secondary {
+  @apply bg-[#083cab] border border-[#083cab];
+}
+.btn-primary {
+  @apply bg-[#1571fc] border border-[#1571fc];
+}
