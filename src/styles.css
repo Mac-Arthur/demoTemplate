@@ -18,3 +18,6 @@ body {
 .btn-primary {
   @apply bg-[#1571fc] border border-[#1571fc];
 }
+.hover-effect{
+  @apply transform transition-transform duration-300 hover:scale-105 active:scale-105;
+}
